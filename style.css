@@ -707,3 +707,99 @@ a {
         font-size: 2.2rem;
     }
 }
+
+/* Service Card Image and List Details Styles */
+.service-card-img {
+    width: calc(100% + 60px);
+    height: 190px;
+    object-fit: cover;
+    margin: -40px -30px 25px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.service-card:hover .service-card-img {
+    transform: scale(1.03);
+}
+
+.service-details-list {
+    list-style: none;
+    margin-bottom: 25px;
+    padding: 0;
+    text-align: left;
+}
+
+.service-details-list li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.service-details-list li svg {
+    color: var(--primary-light);
+    flex-shrink: 0;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: #ffffff;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 75px;
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: var(--transition);
+    box-shadow: var(--shadow-subtle);
+    pointer-events: none;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary);
+}
+
